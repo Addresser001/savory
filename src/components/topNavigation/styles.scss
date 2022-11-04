@@ -4,21 +4,26 @@
   z-index: 9999;
   width: 100%;
   .desktop_view {
-    width: 65%;
+    width: 60%;
+    height: 58px;
     margin: auto !important;
-    padding: 20px 50px 14px 100px;
+    // padding: 20px 50px 14px 100px;
     background-color: $special_color;
     border-radius: 0px 0px 8px 8px;
 
     display: flex;
+    position: relative;
     .logo {
-      margin-right: 180px;
+      transform: translateX(100%);
       position: relative;
       top: 5px;
     }
 
     ul {
-      width: 100%;
+      // background-color: red;
+      display: inline-flex;
+      position: relative;
+      left: 300px;
 
       li {
         display: inline-block;
