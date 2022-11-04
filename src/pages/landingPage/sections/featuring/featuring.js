@@ -6,6 +6,7 @@ import './styles.scss';
 import { Vector_underline } from '../../../../assets/svg/svg';
 const Featuring = () => {
   return (
+    //Featuring
     <div className='featuring_container'>
       <div className='header_and_text_container'>
         <div className='header'>
