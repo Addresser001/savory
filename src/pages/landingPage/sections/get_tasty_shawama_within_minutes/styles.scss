@@ -1,0 +1,277 @@
+// Get Tasty Shawama within minutes
+
+@import '../../../../constants/colors';
+@import '../../../../constants/typography';
+.get_tasty_shawama {
+  width: 100%;
+
+  margin: auto;
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  .left_side_text {
+    width: 35%;
+    margin-top: 70px;
+    position: relative;
+    .title_back_layer {
+      position: absolute;
+      left: 0;
+    }
+    .title_and_button_container {
+      padding: 0px 0px 0px 40px;
+      h1 {
+        color: $text_black;
+        width: 400px;
+
+        position: relative;
+      }
+
+      .buttons_container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        padding-top: 20px;
+      }
+    }
+  }
+
+  .get_tasty_shawama_image {
+    width: 37vw;
+    height: 37vw;
+    border-radius: 100%;
+    background: $primary_bg1;
+    box-shadow: -12px 15px 39px 15px rgba(252, 250, 248, 0.9);
+    text-align: center !important;
+    position: relative;
+
+    .halve_circles {
+      position: absolute;
+      top: 25px;
+      bottom: 0px;
+      right: 15px;
+      left: 0px;
+      width: 26vw;
+      height: 26vw;
+      margin: auto;
+    }
+
+    .dotted_circle {
+      position: absolute;
+      border-radius: 100%;
+      border: 2px dashed #efe5e2;
+      margin: auto !important;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 23vw;
+      height: 23vw;
+    }
+    img {
+      width: 22vw;
+      height: 22vw;
+      border-radius: 100%;
+      margin: auto !important;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .right_side_text_with_icons {
+    padding-right: 40px;
+    width: 18%;
+    margin-top: 70px;
+
+    .sub_container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      p {
+        width: 150px;
+      }
+      .icons {
+        position: relative;
+        top: 15px;
+        padding: 15px;
+        height: 30px;
+        border-radius: 100%;
+        background: $primary_bg1;
+        box-shadow: 0px 1px 21px 1px rgba(223, 255, 204, 0.7);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+
+    margin: auto;
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    .left_side_text {
+      width: 50%;
+      margin-top: 70px;
+      position: relative;
+      .title_back_layer {
+        position: absolute;
+        left: 0;
+      }
+      .title_and_button_container {
+        width: 100%;
+        padding: 0px 0px 0px 25px;
+        h1 {
+          color: $text_black;
+          width: 400px;
+
+          position: relative;
+        }
+
+        .buttons_container {
+          width: 100%;
+          padding-bottom: 50px;
+          padding-top: 20px;
+
+          .btn {
+            width: 45%;
+            padding: 20px 30px !important;
+          }
+        }
+      }
+    }
+
+    .get_tasty_shawama_image {
+      width: 45vw;
+      height: 45vw;
+      border-radius: 100%;
+      background: $primary_bg1;
+      box-shadow: -12px 15px 39px 15px rgba(252, 250, 248, 0.9);
+      text-align: center !important;
+      position: relative;
+
+      .halve_circles {
+        position: absolute;
+        top: 20px;
+        bottom: 0px;
+        right: 10px;
+        left: 0px;
+        width: 37vw;
+        height: 37vw;
+        margin: auto;
+      }
+
+      .dotted_circle {
+        position: absolute;
+        border-radius: 100%;
+        border: 2px dashed #efe5e2;
+        margin: auto !important;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 32vw;
+        height: 32vw;
+      }
+      img {
+        width: 30vw;
+        height: 30vw;
+        border-radius: 100%;
+        margin: auto !important;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    .right_side_text_with_icons {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    margin: auto;
+    padding-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .left_side_text {
+      width: 90%;
+
+      margin-top: 70px;
+      position: relative;
+      .title_back_layer {
+        position: absolute;
+        left: 0;
+        width: 130px;
+      }
+      .title_and_button_container {
+        padding: 0px 0px 0px 15px;
+        h1 {
+          color: $text_black;
+          width: 100%;
+          font-size: 35px;
+          line-height: 40px;
+
+          @media screen and (max-width: 280px) {
+            font-size: 30px;
+          }
+        }
+
+        .buttons_container {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 20px;
+          padding-top: 20px;
+
+          .btn {
+            font-size: 15px !important;
+            padding: 10px 10px !important;
+          }
+        }
+      }
+    }
+
+    .get_tasty_shawama_image {
+      position: relative;
+      width: 90vw;
+      height: 90vw;
+      margin: auto;
+
+      .halve_circles {
+        position: absolute;
+        top: 19px;
+        bottom: 0px;
+        right: 9px;
+        left: 0px;
+        width: 77vw;
+        height: 77vw;
+        margin: auto;
+        @media screen and (max-width: 280px) {
+          top: 14px;
+        }
+      }
+
+      .dotted_circle {
+        border: 2px dashed #efe5e2;
+        width: 67vw;
+        height: 67vw;
+      }
+      img {
+        width: 65vw;
+        height: 65vw;
+      }
+    }
+
+    .right_side_text_with_icons {
+      display: none;
+    }
+  }
+}

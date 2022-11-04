@@ -1,0 +1,192 @@
+// Featuring
+@import '../../../../constants/colors';
+@import '../../../../constants/typography';
+.featuring_container {
+  .header_and_text_container {
+    .header {
+      text-align: center;
+      padding-top: 91px;
+      h4 {
+        margin-bottom: 12px;
+        color: $text_black;
+      }
+    }
+
+    h3 {
+      margin: auto;
+      margin-top: 20px;
+      width: 584px;
+      color: $text_black;
+    }
+  }
+
+  .amazing_packages_content_and_images_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: hidden;
+    padding-bottom: 61px;
+
+    .packs_container {
+      display: grid;
+      width: 55%;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 88px;
+
+      row-gap: 30px;
+      .each_pack {
+        width: 70%;
+        padding: 30px;
+        background: $primary_bg2;
+        box-shadow: 0px 0px 20px -1px rgba(133, 133, 133, 0.14);
+        border-radius: 8px;
+        .title_and_icon {
+          display: flex;
+          .pack_icons {
+            padding: 15px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0px 1px 15px 1px rgba(236, 92, 52, 0.17);
+          }
+          h5 {
+            position: relative;
+            top: 10px;
+            left: 20px;
+          }
+        }
+
+        p {
+          font-family: 'Plus Jakarta Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .images_container {
+      width: 40%;
+      position: relative;
+
+      .packages_side_img1 {
+        position: absolute;
+        top: 40px;
+        right: 130px;
+        width: 330px;
+      }
+      .packages_side_img2 {
+        position: absolute;
+        top: 290px;
+        z-index: 100;
+        left: 100px;
+        width: 330px;
+      }
+      .packages_side_img3 {
+        position: absolute;
+        right: 0;
+        top: 130px;
+        width: 210px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .header_and_text_container {
+      h3 {
+        font-size: 27px;
+      }
+    }
+
+    .amazing_packages_content_and_images_container {
+      .images_container {
+        width: 40%;
+
+        .packages_side_img1 {
+          top: 20px;
+          right: 100px;
+          width: 300px;
+        }
+        .packages_side_img2 {
+          width: 300px;
+        }
+        .packages_side_img3 {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    .amazing_packages_content_and_images_container {
+      width: 100%;
+      padding-bottom: 61px;
+
+      .packs_container {
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+
+        row-gap: 30px;
+        .each_pack {
+          width: 250px;
+          margin: auto;
+        }
+      }
+
+      .images_container {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .header_and_text_container {
+      width: 90%;
+      margin: auto;
+      .header {
+        text-align: center;
+        padding-top: 91px;
+        h4 {
+          margin-bottom: 12px;
+        }
+      }
+
+      h3 {
+        margin: auto;
+        margin-top: 20px;
+        width: 100%;
+        font-size: 25px;
+        font-weight: 500;
+      }
+    }
+
+    .amazing_packages_content_and_images_container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      overflow-x: hidden;
+      padding-bottom: 61px;
+
+      .packs_container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+
+        row-gap: 30px;
+        .each_pack {
+          width: 70%;
+          margin: auto;
+          padding: 30px;
+        }
+      }
+
+      .images_container {
+        display: none;
+      }
+    }
+  }
+}

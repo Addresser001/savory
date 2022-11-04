@@ -1,0 +1,213 @@
+// Our Reviews
+@import '../../../../constants/colors';
+@import '../../../../constants/typography';
+.our_reviews {
+  width: 100%;
+  background: #fffcfa;
+  padding: 80px 0px 0px 0px;
+
+  .header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sub_container {
+    width: 100%;
+    padding: 50px 0px;
+    overflow: hidden;
+
+    padding: 70px 0px;
+
+    .review_container {
+      width: 170%;
+      display: flex;
+
+      justify-content: space-between;
+      animation-name: review;
+      animation-duration: 25s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+
+      @keyframes review {
+        0% {
+          position: relative;
+          left: 100vw;
+        }
+
+        100% {
+          position: relative;
+          left: -120vw;
+          // transform: matrix(0.99, -0.22, 0.12, 0.98, 0, 0);
+        }
+      }
+
+      &:hover {
+        animation-play-state: paused;
+      }
+      .each_review {
+        width: 347.07px;
+        height: 257.11px;
+
+        padding: 48px;
+        background: #ffffff;
+        box-shadow: 0px 0px 20px -1px #fde6df;
+        border-radius: 8px;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+          box-shadow: 0px 0px 60px -1px #fde6df;
+          transform: scale(1.1);
+          transition: 0.5s ease-in-out;
+        }
+
+        .review_img_and_name {
+          display: flex;
+          .review_name_and_address {
+            margin: 10px;
+          }
+        }
+
+        p {
+          margin-top: 20px;
+          font-size: 16px;
+          width: 251.29px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    background: #fffcfa;
+    padding: 80px 0px 0px 0px;
+
+    .header {
+      width: 100%;
+      text-align: center;
+    }
+
+    .sub_container {
+      width: 100%;
+      padding: 50px 0px;
+      overflow: hidden;
+
+      padding: 70px 0px;
+
+      .review_container {
+        width: 230%;
+
+        @keyframes review {
+          0% {
+            position: relative;
+            left: 100vw;
+          }
+
+          100% {
+            position: relative;
+            left: -180vw;
+
+            // transform: matrix(0.99, -0.22, 0.12, 0.98, 0, 0);
+          }
+        }
+
+        @media screen and (max-width: 1023px) {
+          width: 270%;
+
+          @keyframes review {
+            0% {
+              position: relative;
+              left: 100vw;
+            }
+
+            100% {
+              position: relative;
+              left: -200vw;
+
+              // transform: matrix(0.99, -0.22, 0.12, 0.98, 0, 0);
+            }
+          }
+
+          .each_review {
+            width: 300px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    background: #fffcfa;
+    padding: 80px 0px 80px 0px;
+
+    .header {
+      width: 100%;
+      text-align: center;
+    }
+
+    .sub_container {
+      width: 100%;
+      overflow: scroll;
+      padding: 20px 0px;
+      margin-top: 10px;
+
+      .review_container {
+        width: 1450px;
+        display: flex;
+        padding: 0px 25px;
+        justify-content: space-between;
+        @media screen and (max-width: 280px) {
+          width: 500%;
+          padding: 0px 10px;
+        }
+
+        @keyframes review {
+          0% {
+            position: relative;
+            left: 0vw;
+          }
+
+          100% {
+            position: relative;
+            left: 0vw;
+          }
+        }
+
+        &:hover {
+          animation-play-state: paused;
+        }
+        .each_review {
+          width: 230px;
+          height: 220.11px;
+          position: relative;
+          padding: 20px;
+          box-shadow: 0px 0px 20px -1px #fde6df;
+
+          @media screen and (max-width: 280px) {
+            width: 220px;
+            padding: 20px;
+          }
+
+          &:hover {
+            transform: scale(1);
+            box-shadow: 0px 0px 20px -1px #fde6df;
+          }
+
+          .review_img_and_name {
+            display: flex;
+            .review_name_and_address {
+              margin: 10px;
+            }
+          }
+
+          p {
+            margin-top: 20px;
+            font-size: 16px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

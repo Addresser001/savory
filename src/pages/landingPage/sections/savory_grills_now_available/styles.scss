@@ -1,0 +1,229 @@
+// Savory grills now available
+@import '../../../../constants/colors';
+@import '../../../../constants/typography';
+.savory_grills_now_available {
+  background-color: $secondary_bg1;
+  width: 90%;
+  height: 400px;
+  border-radius: 20px;
+
+  margin: auto;
+  overflow: hidden;
+  margin-top: 91px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  .left_grill_container {
+    width: 25%;
+    position: relative;
+
+    img {
+      position: absolute;
+      width: 280px;
+      height: 340px;
+    }
+    .left_grill_img {
+      width: 250px;
+      height: 290px;
+    }
+  }
+
+  .text {
+    width: 50%;
+
+    text-align: center;
+
+    h2 {
+      color: $text_white;
+      margin: 100px 0px 37px 0px;
+    }
+
+    p {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+      width: 430px;
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+      }
+
+      margin: auto;
+      color: $text_white;
+    }
+  }
+  .right_grill_container {
+    position: relative;
+    width: 25%;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 310px;
+      width: 280px;
+    }
+    .right_grill_img {
+      position: absolute;
+      right: 0;
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    background-color: $secondary_bg1;
+    width: 90%;
+    height: 400px;
+    border-radius: 20px;
+
+    margin: auto;
+    overflow: hidden;
+    margin-top: 91px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .left_grill_container {
+      width: 25%;
+      position: relative;
+
+      img {
+        position: absolute;
+        width: 280px;
+        height: 340px;
+      }
+      .left_grill_img {
+        width: 250px;
+        height: 290px;
+      }
+    }
+
+    .text {
+      width: 80%;
+      position: relative;
+      text-align: center;
+      z-index: 50;
+
+      h2 {
+        color: $text_white;
+        margin: 70px 0px 37px 0px;
+      }
+
+      p {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+
+        width: 100%;
+
+        margin: auto;
+        color: $text_white;
+      }
+    }
+    .right_grill_container {
+      position: relative;
+      width: 25%;
+
+      img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 310px;
+        width: 280px;
+      }
+      .right_grill_img {
+        position: absolute;
+        right: 0;
+        width: 280px;
+        height: 280px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 95%;
+    height: 300px;
+    border-radius: 20px;
+
+    margin: auto;
+    overflow: hidden;
+    margin-top: 70px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .left_grill_container {
+      width: 10%;
+
+      img {
+        width: 140px;
+        height: 160px;
+      }
+      .left_grill_img {
+        width: 120px;
+        height: 140px;
+      }
+    }
+
+    .text {
+      width: 100%;
+      position: relative;
+      z-index: 100;
+
+      h2 {
+        color: $text_white;
+        margin: 25px 0px 20px 0px;
+        font-size: 30px;
+        line-height: 33px;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        color: $text_white;
+      }
+
+      .order_now_btn {
+        padding: 10px 30px !important;
+        margin-top: 30px !important;
+        font-size: 18px !important;
+      }
+      @media screen and (max-width: 280px) {
+        h2 {
+          font-size: 25px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        .order_now_btn {
+          font-size: 15px !important;
+        }
+      }
+    }
+    .right_grill_container {
+      position: relative;
+      width: 10%;
+
+      img {
+        height: 140px;
+        width: 140px;
+      }
+      .right_grill_img {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  }
+}

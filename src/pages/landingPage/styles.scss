@@ -1,0 +1,17 @@
+@import '../../constants/colors';
+@import '../../constants/typography';
+.landing_page {
+  width: 100%;
+  // height: 700px;
+  background-color: $primary_bg1;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+
+  .we_offer_varieties_and_savory_grills_now_available_and_featuring_container {
+    background-color: $primary_bg2;
+    width: 100%;
+
+    margin: 0px;
+  }
+}
