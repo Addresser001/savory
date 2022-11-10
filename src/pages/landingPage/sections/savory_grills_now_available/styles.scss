@@ -20,12 +20,12 @@
 
     img {
       position: absolute;
-      width: 280px;
-      height: 340px;
+      width: 300px;
+      height: 400px;
     }
     .left_grill_img {
-      width: 250px;
-      height: 290px;
+      width: 260px;
+      height: 350px;
     }
   }
 
@@ -37,6 +37,12 @@
     h2 {
       color: $text_white;
       margin: 100px 0px 37px 0px;
+      font-family: 'Georgia';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 45px;
+      text-align: center;
     }
 
     p {
@@ -46,7 +52,8 @@
       font-size: 24px;
       line-height: 30px;
       text-align: center;
-      width: 430px;
+      width: 585px;
+
       @media screen and (max-width: 1024px) {
         width: 100%;
       }
@@ -63,14 +70,14 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      height: 310px;
-      width: 280px;
+      height: 360px;
+      width: 300px;
     }
     .right_grill_img {
       position: absolute;
       right: 0;
-      width: 280px;
-      height: 280px;
+      width: 300px;
+      height: 320px;
     }
   }
 

@@ -3,23 +3,24 @@
 @import '../../../../constants/typography';
 .our_reviews {
   width: 100%;
-  background: #fffcfa;
+  background: $primary_bg2;
   padding: 80px 0px 0px 0px;
 
   .header {
     width: 100%;
     text-align: center;
+    h4 {
+      margin-bottom: 8px;
+    }
   }
 
   .sub_container {
     width: 100%;
-    padding: 50px 0px;
     overflow: hidden;
-
     padding: 70px 0px;
 
     .review_container {
-      width: 170%;
+      width: 135%;
       display: flex;
 
       justify-content: space-between;
@@ -36,7 +37,7 @@
 
         100% {
           position: relative;
-          left: -120vw;
+          left: -80vw;
           // transform: matrix(0.99, -0.22, 0.12, 0.98, 0, 0);
         }
       }
@@ -45,11 +46,11 @@
         animation-play-state: paused;
       }
       .each_review {
-        width: 347.07px;
-        height: 257.11px;
-
-        padding: 48px;
-        background: #ffffff;
+        width: 346.4px;
+        height: 257.42px;
+        box-sizing: border-box;
+        padding: 30px;
+        background: $primary_bg1;
         box-shadow: 0px 0px 20px -1px #fde6df;
         border-radius: 8px;
         transition: 0.5s ease-in-out;
@@ -62,15 +63,36 @@
 
         .review_img_and_name {
           display: flex;
+
           .review_name_and_address {
             margin: 10px;
+            h4 {
+              font-family: 'Plus Jakarta Sans';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 24px;
+              line-height: 30px;
+              color: $sub_color2;
+            }
+            h6 {
+              font-family: 'Plus Jakarta Sans';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+              color: #92938e;
+            }
           }
         }
 
         p {
-          margin-top: 20px;
+          margin: 20px 0px 0px 10px;
           font-size: 16px;
           width: 251.29px;
+          color: $sub_color2;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
         }
       }
     }

@@ -1,13 +1,13 @@
 import { reviews } from '../../data/data';
 
-import { Vector_underline } from '../../../../assets/svg/svg';
+import { Vector_underline_3 } from '../../../../assets/svg/svg';
 import './styles.scss';
 const OurReviews = () => {
   return (
     <div className='our_reviews'>
       <div className='header'>
         <h4>Our Reviews</h4>
-        {Vector_underline}
+        {Vector_underline_3}
       </div>
 
       <div className='sub_container'>

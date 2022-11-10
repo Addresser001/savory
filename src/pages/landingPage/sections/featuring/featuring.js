@@ -3,7 +3,7 @@ import packages_side_img2 from '../../../../assets/images/packages_side_img2.png
 import packages_side_img3 from '../../../../assets/images/packages_side_img3.png';
 import { Packages } from '../../data/data';
 import './styles.scss';
-import { Vector_underline } from '../../../../assets/svg/svg';
+import { Vector_underline_2 } from '../../../../assets/svg/svg';
 const Featuring = () => {
   return (
     //Featuring
@@ -11,7 +11,7 @@ const Featuring = () => {
       <div className='header_and_text_container'>
         <div className='header'>
           <h4>Featuring</h4>
-          {Vector_underline}
+          {Vector_underline_2}
         </div>
         <h3>Amazing packages you can share with others and cut cost</h3>
       </div>

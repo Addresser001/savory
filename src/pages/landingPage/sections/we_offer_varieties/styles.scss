@@ -3,8 +3,10 @@
 .we_offer_varieties {
   width: 100%;
   .header_and_text {
-    width: 701px;
+    width: 801px;
     margin: auto;
+
+    color: #474747;
 
     .header {
       text-align: center;
@@ -16,6 +18,7 @@
 
     h3 {
       margin-top: 50px;
+      text-align: center;
     }
   }
 
@@ -29,10 +32,11 @@
       justify-content: space-between;
       width: 100%;
       .each_bbq {
-        width: 25%;
+        width: 345px;
         background: $primary_bg1;
         box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.06);
         border-radius: 8px;
+        box-sizing: border-box;
         padding: 25px;
 
         img {

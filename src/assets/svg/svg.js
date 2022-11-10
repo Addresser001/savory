@@ -151,6 +151,40 @@ export const Vector_underline = (
   </svg>
 );
 
+export const Vector_underline_2 = (
+  <svg
+    width='115'
+    height='16'
+    viewBox='0 0 115 16'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M3 11.238C23.0442 11.238 42.7668 7.69997 62.6721 5.76586C78.3284 4.24459 125.567 4.2024 109.836 4.2024C76.1428 4.2024 34.0685 -1.9511 3 13.5832'
+      stroke='#316E4D'
+      stroke-width='4.06763'
+      stroke-linecap='round'
+    />
+  </svg>
+);
+
+export const Vector_underline_3 = (
+  <svg
+    width='145'
+    height='17'
+    viewBox='0 0 145 17'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M3 11.5624C28.5108 11.5624 53.6123 7.88509 78.9462 5.8748C98.8725 4.29361 158.994 4.24976 138.974 4.24976C96.0908 4.24976 42.5417 -2.14611 3 14'
+      stroke='#316E4D'
+      stroke-width='4.06763'
+      stroke-linecap='round'
+    />
+  </svg>
+);
+
 export const Arrow = (
   <svg
     width='25'

@@ -8,7 +8,7 @@ export const Packages = [
   {
     title: 'Partner Pack',
     icon: <>{partner_pack_icon}</>,
-    desc: 'Ullamcorper porttitor mattis vel maecenas quisque tincidunt. Sem enim sagittis, sagittis enim pharetra ',
+    desc: 'Ullamcorper porttitor mattis vel maecenas quisque tincidunt. Sem enim sagittis, sagittis enim pharetra  ',
   },
 
   {

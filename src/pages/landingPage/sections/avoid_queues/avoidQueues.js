@@ -18,7 +18,7 @@ const AvoidQueues = () => {
             pulvinar nibh vestibulum tellus nunc nisi quis. pulvinar nibh
             vestibulum tellus nunc nisi quis.
           </p>
-          <p>
+          <p className='second_paragraph'>
             Facilisi at id ornare viverra tempor elit amet. Habitant vitae
             pulvinar nibh vestibulum tellus nunc nisi quis. pulvinar nibh
             vestibulum tellus nunc nisi quis.
@@ -30,7 +30,6 @@ const AvoidQueues = () => {
           <Button
             text='Place an Order'
             bColor='#EC5C34'
-            padding='25px 73px'
             color='#ffffff'
             className='place_an_order_btn'
           />

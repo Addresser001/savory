@@ -23,17 +23,17 @@ const GetTastyShawamaWithinMinutes = () => {
               boxShadow='-3px 5px 12px 1px rgba(216, 117, 89, 0.25)'
               padding='18px 50px'
               color='#EC5C34'
-              className='btn'
+              className='order_now_btn btn'
             />
 
             <Button
               text='Call us'
               fontSize='18px'
               bColor=' #316E4D'
-              padding='19px 34px'
+              padding='5px 20px'
               color='#FFFFFF'
               boxShadow='0px'
-              className='btn'
+              className='call_us_btn btn'
             />
           </div>
         </div>
