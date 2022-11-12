@@ -1,11 +1,11 @@
 export const NavItems = [
   {
-    link: '#',
+    link: '/',
     caption: 'Home',
   },
 
   {
-    link: '#',
+    link: '/menu',
     caption: 'Menu',
   },
 

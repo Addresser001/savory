@@ -981,3 +981,91 @@ export const thong = (
     />
   </svg>
 );
+
+export const star = (
+  <svg
+    width='14'
+    height='13'
+    viewBox='0 0 14 13'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M7 0L8.5716 4.83688H13.6574L9.5429 7.82624L11.1145 12.6631L7 9.67376L2.8855 12.6631L4.4571 7.82624L0.342604 4.83688H5.4284L7 0Z'
+      fill='white'
+    />
+  </svg>
+);
+
+export const plus_svg = (
+  <svg
+    width='13'
+    height='13'
+    viewBox='0 0 13 13'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M6.33333 11.6667V6.33333V11.6667ZM6.33333 6.33333V1V6.33333ZM6.33333 6.33333H11.6667H6.33333ZM6.33333 6.33333H1H6.33333Z'
+      fill='#C5C5C5'
+    />
+    <path
+      d='M6.33333 11.6667V6.33333M6.33333 6.33333V1M6.33333 6.33333H11.6667M6.33333 6.33333H1'
+      stroke='#C5C5C5'
+      stroke-width='2'
+      stroke-linecap='round'
+    />
+  </svg>
+);
+
+export const minus_svg = (
+  <svg
+    width='13'
+    height='2'
+    viewBox='0 0 13 2'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path d='M11.6667 1H1H11.6667Z' fill='#C5C5C5' />
+    <path
+      d='M11.6667 1H1'
+      stroke='#C5C5C5'
+      stroke-width='2'
+      stroke-linecap='round'
+    />
+  </svg>
+);
+
+export const plus_svg2 = (
+  <svg
+    width='14'
+    height='14'
+    viewBox='0 0 14 14'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M7 13V7M7 7V1M7 7H13M7 7H1'
+      stroke='#EC5C34'
+      stroke-width='2'
+      stroke-linecap='round'
+    />
+  </svg>
+);
+
+export const Search_icon = (
+  <svg
+    width='25'
+    height='25'
+    viewBox='0 0 25 25'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M23.6611 23.1231L18.4518 17.9607M21.3386 11.0615C21.3386 13.6511 20.2987 16.1347 18.4476 17.9658C16.5966 19.7969 14.086 20.8256 11.4681 20.8256C8.85033 20.8256 6.33973 19.7969 4.48866 17.9658C2.63758 16.1347 1.59766 13.6511 1.59766 11.0615C1.59766 8.47193 2.63758 5.98839 4.48866 4.15726C6.33973 2.32614 8.85033 1.29742 11.4681 1.29742C14.086 1.29742 16.5966 2.32614 18.4476 4.15726C20.2987 5.98839 21.3386 8.47193 21.3386 11.0615V11.0615Z'
+      stroke='#7A7979'
+      stroke-width='2'
+      stroke-linecap='round'
+    />
+  </svg>
+);

@@ -8,9 +8,11 @@ const Button = ({
   boxShadow,
   fontSize,
   className,
+  onClick,
 }) => {
   return (
     <button
+      onClick={onClick}
       className={`button  ${className}`}
       style={{
         color: `${color}`,

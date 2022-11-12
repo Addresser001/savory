@@ -4,6 +4,7 @@ import { motion, useCycle, variants } from 'framer-motion';
 import ToggleBtn from './toggleButtons';
 import { useEffect, useState } from 'react';
 import { NavItems } from './navItems';
+import { useLocation } from 'react-router-dom';
 
 const sidebarVariants = {
   open: {
@@ -63,6 +64,19 @@ const TopNavigation = () => {
 
   // console.log({ isOpen });
 
+  const { pathname } = useLocation();
+
+  // const activeNavItem = (e) => {
+  const navi = document.querySelector('#nav');
+
+  const activeNavItem = (e) => {
+    if ((e.target.href = pathname)) {
+      e.target.className = 'activeNav';
+    }
+  };
+  // useEffect(() => {
+  //   activeNavItem();
+  // }, []);
   return (
     <motion.div className='top_navigation'>
       <motion.div className='desktop_view'>
@@ -73,7 +87,9 @@ const TopNavigation = () => {
 
             return (
               <li>
-                <a href={link}>{caption}</a>
+                <a id='nav' href={link} onClick={(e) => activeNavItem()}>
+                  {caption}
+                </a>
               </li>
             );
           })}
