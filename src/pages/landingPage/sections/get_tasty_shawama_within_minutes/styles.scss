@@ -23,7 +23,7 @@
       h1 {
         color: $text_black;
         width: 400px;
-        font-size: 48px !important;
+        font-size: 48px;
         line-height: 55px;
         position: relative;
       }
@@ -147,7 +147,7 @@
         h1 {
           color: $text_black;
           width: 400px;
-          font-size: 43px !important;
+          font-size: 43px;
           position: relative;
         }
 
@@ -249,7 +249,8 @@
           line-height: 40px;
 
           @media screen and (max-width: 280px) {
-            font-size: 30px;
+            font-size: 31px;
+            line-height: 35px;
           }
         }
 

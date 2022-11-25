@@ -12,7 +12,7 @@ function App() {
 
       <Routes>
         <Route exact path={LANDING_PAGE} element={<LandingPage />} />
-        <Route exact path={MENU_PAGE} element={<MenuPage />} />
+        <Route path={MENU_PAGE} element={<MenuPage />} />
       </Routes>
     </div>
   );

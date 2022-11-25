@@ -10,12 +10,12 @@ export const NavItems = [
   },
 
   {
-    link: '#',
+    link: '/order',
     caption: 'Order',
   },
 
   {
-    link: '#',
+    link: '/ourservices',
     caption: 'Our Services',
   },
 ];

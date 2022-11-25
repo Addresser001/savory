@@ -162,10 +162,11 @@
 
       h3 {
         margin: auto;
-        margin-top: 20px;
+        margin-top: 10px;
         width: 100%;
-        font-size: 25px;
+        font-size: 21px;
         font-weight: 500;
+        line-height: 30px;
       }
     }
 
@@ -186,9 +187,37 @@
 
         row-gap: 30px;
         .each_pack {
-          width: 70%;
+          width: 90%;
           margin: auto;
           padding: 30px;
+          @media screen and (max-width: 320px) {
+            padding: 20px;
+            .title_and_icon {
+              h5 {
+                font-size: 17px;
+                width: 130px;
+              }
+            }
+          }
+
+          @media screen and (max-width: 280px) {
+            padding: 20px;
+            .title_and_icon {
+              h5 {
+                font-size: 17px;
+                width: 130px;
+              }
+            }
+
+            p {
+              margin-top: 15px;
+              font-size: 14px;
+            }
+          }
+
+          p {
+            margin-top: 15px;
+          }
         }
       }
 

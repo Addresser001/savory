@@ -4,7 +4,7 @@ import { motion, useCycle, variants } from 'framer-motion';
 import ToggleBtn from './toggleButtons';
 import { useEffect, useState } from 'react';
 import { NavItems } from './navItems';
-import { useLocation } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 
 const sidebarVariants = {
   open: {
@@ -62,24 +62,15 @@ const navItemsVariants = {
 const TopNavigation = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
-  // console.log({ isOpen });
-
-  const { pathname } = useLocation();
-
-  // const activeNavItem = (e) => {
-  const navi = document.querySelector('#nav');
-
-  const activeNavItem = (e) => {
-    if ((e.target.href = pathname)) {
-      e.target.className = 'activeNav';
-    }
-  };
-  // useEffect(() => {
-  //   activeNavItem();
-  // }, []);
+  // const navLinkStyles = ({ isActive }) => {
+  //   return {
+  //     textDecoration: isActive ? 'underline' : 'none',
+  //     fontWeight: isActive ? '600' : '400',
+  //   };
+  // };
   return (
     <motion.div className='top_navigation'>
-      <motion.div className='desktop_view'>
+      <motion.nav className='desktop_view'>
         <div className='logo'>{Logo}</div>
         <ul>
           {NavItems.map((items) => {
@@ -87,14 +78,20 @@ const TopNavigation = () => {
 
             return (
               <li>
-                <a id='nav' href={link} onClick={(e) => activeNavItem()}>
+                <Link
+                  end
+                  to={link}
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'inactive'
+                  }
+                >
                   {caption}
-                </a>
+                </Link>
               </li>
             );
           })}
         </ul>
-      </motion.div>
+      </motion.nav>
 
       <div
         className='mobile_view_main_container'
@@ -113,8 +110,10 @@ const TopNavigation = () => {
         }
       >
         <div className='toggler_and_logo'>
-          <ToggleBtn toggle={() => toggleOpen()} />
-          <div className='logo'>{Logo}</div>
+          <div className='sub_container'>
+            <div className='logo'>{Logo}</div>
+            <ToggleBtn toggle={() => toggleOpen()} />
+          </div>
         </div>
         <motion.div
           className='mobile_view'
@@ -128,7 +127,9 @@ const TopNavigation = () => {
 
               return (
                 <motion.li variants={navItemsVariants}>
-                  <a href={link}>{caption}</a>
+                  <Link to={link} activeClassName='active'>
+                    {caption}
+                  </Link>
                 </motion.li>
               );
             })}

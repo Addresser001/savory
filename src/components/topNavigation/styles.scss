@@ -36,11 +36,9 @@
           font-weight: 400;
         }
 
-        .activeNav {
-          text-decoration: underline !important;
-          color: $text_white;
-          padding: 20px;
-          font-weight: 600 !important;
+        .active {
+          text-decoration: underline;
+          font-weight: 600;
         }
       }
     }
@@ -61,29 +59,36 @@
     z-index: 9999;
     width: 100%;
     .desktop_view {
-      width: 75%;
+      width: 65%;
+      height: 58px;
       margin: auto !important;
-      padding: 20px 50px 14px 50px;
+      // padding: 20px 50px 14px 100px;
       background-color: $special_color;
       border-radius: 0px 0px 8px 8px;
 
       display: flex;
+      position: relative;
       .logo {
-        margin-right: 100px;
+        transform: translateX(100%);
         position: relative;
         top: 5px;
       }
 
       ul {
-        width: 100%;
+        // background-color: red;
+        display: inline-flex;
+        position: relative;
+        left: 120px;
 
         li {
           display: inline-block;
-          margin-right: 20px;
+          margin-right: 10px;
+
           a {
             text-decoration: none;
             color: $text_white;
             padding: 20px;
+            font-weight: 400;
           }
         }
       }
@@ -99,32 +104,37 @@
   @media screen and (max-width: 1023px) {
     .mobile_view_main_container {
       display: block;
+      width: 100%;
       position: relative;
-      z-index: -1;
+
+      z-index: -99;
 
       .toggler_and_logo {
-        width: 100%;
-        margin: auto;
         background-color: $primary_bg2;
-
+        width: 100%;
         padding: 10px 0px;
         display: flex;
         border-radius: 0px 0px 8px 8px;
-        .logo {
-          margin-right: 0px;
-          margin-left: 12px;
-          color: $special_color;
-        }
+        .sub_container {
+          display: flex;
+          justify-content: space-between;
 
-        button {
-          position: absolute;
-          right: 0;
-          background-color: transparent;
-          border: 0px;
-          margin-right: 15px;
-
-          svg {
+          margin: auto;
+          width: 85%;
+          .logo {
+            margin-right: 0px;
+            // margin-left: 12px;
             color: $special_color;
+          }
+
+          button {
+            background-color: transparent;
+            border: 0px;
+            // margin-right: 15px;
+
+            svg {
+              color: $special_color;
+            }
           }
         }
       }

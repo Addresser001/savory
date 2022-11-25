@@ -1,10 +1,13 @@
 import './styles.scss';
 import Button from '../../components/button/button';
-import Sharwama from './menu_categories/sharwama/sharwama';
-import { Search_icon } from '../../assets/svg/svg';
+import Sharwama from './menu_categories/sharwama';
+import {
+  Search_icon,
+  Menu_page_sub_nav_buttons_toggler,
+} from '../../assets/svg/svg';
 import { useState } from 'react';
-import Grills from './menu_categories/grills/grills';
-import Bugers from './menu_categories/buger/buger';
+import Grills from './menu_categories/grills';
+import Bugers from './menu_categories/buger';
 import { useContext } from 'react';
 import GeneralContext from '../../context/generalContext/GeneralContext';
 
@@ -41,6 +44,7 @@ const MenuPage = () => {
   return (
     <div className='menu_container'>
       <div className='buttons_container'>
+        <span className='toggler'>{Menu_page_sub_nav_buttons_toggler}</span>
         <Button
           onClick={Sharwama_btn}
           className={`side_btn sharwama_btn ${
@@ -50,15 +54,13 @@ const MenuPage = () => {
         />{' '}
         <Button
           onClick={Grills_btn}
-          className={`side_btn ${
-            grills ? 'btn_onclick_style' : 'side_btn sharwama_btn'
-          }`}
+          className={`side_btn ${grills ? 'btn_onclick_style' : 'side_btn '}`}
           text='Grills'
         />{' '}
         <Button
           onClick={Buger_btn}
           className={`side_btn buger_btn ${
-            buger ? 'btn_onclick_style' : 'side_btn sharwama_btn'
+            buger ? 'btn_onclick_style' : 'side_btn buger_btn'
           }`}
           text='Bugers'
         />

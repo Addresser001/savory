@@ -1,17 +1,12 @@
 import './styles.scss';
-import { Sharwama_items, Sharwama_packs_menu_items } from '../../data';
-import {
-  star,
-  plus_svg,
-  minus_svg,
-  plus_svg2,
-} from '../../../../assets/svg/svg';
-import Button from '../../../../components/button/button';
-import GeneralContext from '../../../../context/generalContext/GeneralContext';
+import { Grills_items, Grills_side_items } from '../data';
+import { star, plus_svg, minus_svg, plus_svg2 } from '../../../assets/svg/svg';
+import Button from '../../../components/button/button';
+import GeneralContext from '../../../context/generalContext/GeneralContext';
 import { useContext } from 'react';
-const Bugers = () => {
+const Grills = () => {
   const { menuItemsSearchQuery } = useContext(GeneralContext);
-  const filtered_sharwama_items = Sharwama_items.filter((item) => {
+  const filtered_grills_item = Grills_items.filter((item) => {
     if (menuItemsSearchQuery === '') {
       return item;
     } else if (
@@ -21,30 +16,28 @@ const Bugers = () => {
     }
   });
 
-  const filtered_sharwama_packs_item = Sharwama_packs_menu_items.filter(
-    (item) => {
-      if (menuItemsSearchQuery === '') {
-        return item;
-      } else if (
-        item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
-      ) {
-        return item;
-      }
+  const filtered_grills_side_item = Grills_side_items.filter((item) => {
+    if (menuItemsSearchQuery === '') {
+      return item;
+    } else if (
+      item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
+    ) {
+      return item;
     }
-  );
+  });
   return (
-    <div className='bugers'>
-      <h2 className='header'>Bugers</h2>
+    <div className='wrapper'>
+      <h2 className='header'>Grills</h2>
 
       <div className='items_container'>
-        {filtered_sharwama_items.map((item) => {
+        {filtered_grills_item.map((item) => {
           const { id, img, name, category, price, quantity } = item;
           return (
             <div className='each_item' key={id}>
               <img src={img} alt='item img' />{' '}
               <div className='item_name_and_star_container'>
                 <h4>{name}</h4>
-                <h6 className='star'>4 {star}</h6>
+                <h6 className='star'>4{star}</h6>
               </div>
               <div className='item_price_and_qty_container'>
                 <h4>{price}</h4>
@@ -64,14 +57,14 @@ const Bugers = () => {
       <h2 className='header packs_header'>Sides</h2>
 
       <div className='items_container'>
-        {filtered_sharwama_packs_item.map((item) => {
+        {filtered_grills_side_item.map((item) => {
           const { id, img, name, category, desc, price, quantity } = item;
           return (
             <div className='each_item' key={id}>
               <img src={img} alt='item img' />{' '}
               <div className='item_name_and_star_container'>
                 <h4>{name}</h4>
-                <h6 className='star'>4 {star}</h6>
+                <h6 className='star'>4{star}</h6>
               </div>
               <h6 className='item_description'>{desc}</h6>
               <div className='item_price_and_qty_container'>
@@ -92,4 +85,4 @@ const Bugers = () => {
   );
 };
 
-export default Bugers;
+export default Grills;

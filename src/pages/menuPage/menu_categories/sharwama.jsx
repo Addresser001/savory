@@ -1,14 +1,9 @@
 import './styles.scss';
-import { Sharwama_items, Sharwama_packs_menu_items } from '../../data';
-import {
-  star,
-  plus_svg,
-  minus_svg,
-  plus_svg2,
-} from '../../../../assets/svg/svg';
+import { Sharwama_items, Sharwama_packs_menu_items } from '../data';
+import { star, plus_svg, minus_svg, plus_svg2 } from '../../../assets/svg/svg';
 import { useEffect, useContext } from 'react';
-import Button from '../../../../components/button/button';
-import GeneralContext from '../../../../context/generalContext/GeneralContext';
+import Button from '../../../components/button/button';
+import GeneralContext from '../../../context/generalContext/GeneralContext';
 
 const Sharwama = () => {
   const { menuItemsSearchQuery } = useContext(GeneralContext);
@@ -34,7 +29,7 @@ const Sharwama = () => {
     }
   );
   return (
-    <div className='sharwama'>
+    <div className='wrapper'>
       <h2 className='header'>Sharwama</h2>
 
       <div className='items_container'>
@@ -46,7 +41,7 @@ const Sharwama = () => {
               <img src={img} alt='item img' />{' '}
               <div className='item_name_and_star_container'>
                 <h4>{name}</h4>
-                <h6 className='star'>4 {star}</h6>
+                <h6 className='star'>4{star}</h6>
               </div>
               <div className='item_price_and_qty_container'>
                 <h4>{price}</h4>
@@ -73,7 +68,7 @@ const Sharwama = () => {
               <img src={img} alt='item img' />{' '}
               <div className='item_name_and_star_container'>
                 <h4>{name}</h4>
-                <h6 className='star'>4 {star}</h6>
+                <h6 className='star'>4{star}</h6>
               </div>
               <h6 className='item_description'>{desc}</h6>
               <div className='item_price_and_qty_container'>
