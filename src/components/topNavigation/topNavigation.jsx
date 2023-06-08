@@ -61,6 +61,12 @@ const navItemsVariants = {
 
 const TopNavigation = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const [toggleIcon, setToggleIcon] = useState(false);
+
+  const navlinks = () => {
+    toggleOpen();
+    setToggleIcon(!toggleIcon);
+  };
 
   // const navLinkStyles = ({ isActive }) => {
   //   return {
@@ -112,7 +118,11 @@ const TopNavigation = () => {
         <div className='toggler_and_logo'>
           <div className='sub_container'>
             <div className='logo'>{Logo}</div>
-            <ToggleBtn toggle={() => toggleOpen()} />
+            <ToggleBtn
+              toggle={() => toggleOpen()}
+              toggleIcon={toggleIcon}
+              setToggleIcon={setToggleIcon}
+            />
           </div>
         </div>
         <motion.div
@@ -127,8 +137,8 @@ const TopNavigation = () => {
 
               return (
                 <motion.li variants={navItemsVariants}>
-                  <Link to={link} activeClassName='active'>
-                    {caption}
+                  <Link to={link} activeClassName='active '>
+                    <span onClick={() => navlinks()}>{caption}</span>
                   </Link>
                 </motion.li>
               );

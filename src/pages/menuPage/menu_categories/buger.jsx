@@ -2,8 +2,26 @@ import './styles.scss';
 import { Sharwama_items, Sharwama_packs_menu_items } from '../data';
 import { star, plus_svg, minus_svg, plus_svg2 } from '../../../assets/svg/svg';
 import { useEffect, useContext } from 'react';
+import { motion } from 'framer-motion';
 import Button from '../../../components/button/button';
 import GeneralContext from '../../../context/generalContext/GeneralContext';
+
+const containerVariants = {
+  hidden: {
+    opacity: 1,
+    x: '-100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: '0vw',
+    transition: {
+      duration: 0.4,
+      ease: [0.6, 0.05, -0.01, 0.9],
+      type: 'spring',
+      stiffness: 100,
+    },
+  },
+};
 
 const Buger = () => {
   const { menuItemsSearchQuery } = useContext(GeneralContext);
@@ -29,7 +47,12 @@ const Buger = () => {
     }
   );
   return (
-    <div className='wrapper'>
+    <motion.div
+      className='wrapper'
+      variants={containerVariants}
+      initial='hidden'
+      animate='visible'
+    >
       <h2 className='header'>Bugers</h2>
 
       <div className='items_container'>
@@ -85,7 +108,7 @@ const Buger = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

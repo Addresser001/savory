@@ -4,7 +4,24 @@ import { star, plus_svg, minus_svg, plus_svg2 } from '../../../assets/svg/svg';
 import { useEffect, useContext } from 'react';
 import Button from '../../../components/button/button';
 import GeneralContext from '../../../context/generalContext/GeneralContext';
+import { motion } from 'framer-motion';
 
+const containerVariants = {
+  hidden: {
+    opacity: 1,
+    x: '-100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: '0vw',
+    transition: {
+      duration: 0.4,
+      ease: [0.6, 0.05, -0.01, 0.9],
+      type: 'spring',
+      stiffness: 100,
+    },
+  },
+};
 const Sharwama = () => {
   const { menuItemsSearchQuery } = useContext(GeneralContext);
   const filtered_sharwama_items = Sharwama_items.filter((item) => {
@@ -29,7 +46,12 @@ const Sharwama = () => {
     }
   );
   return (
-    <div className='wrapper'>
+    <motion.div
+      className='wrapper'
+      variants={containerVariants}
+      initial='hidden'
+      animate='visible'
+    >
       <h2 className='header'>Sharwama</h2>
 
       <div className='items_container'>
@@ -85,7 +107,7 @@ const Sharwama = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
