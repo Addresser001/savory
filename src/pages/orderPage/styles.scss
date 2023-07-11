@@ -1,0 +1,196 @@
+@import '../../constants/colors';
+@import '../../constants/typography';
+.order_page {
+  width: 100%;
+  position: relative;
+  background-color: $primary_bg1;
+  padding: 100px 0px;
+
+  .order_header {
+    font-size: 25px;
+    font-family: Chivo;
+    color: $sub_color2;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    text-align: left;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .summary_not_empty {
+    width: 60%;
+    margin: auto;
+
+    .each_item {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 5px;
+      border: 1px solid rgba(150, 150, 150, 0.418);
+      display: flex;
+      margin-bottom: 30px;
+
+      border-radius: 8px;
+
+      img {
+        height: 100px;
+        width: 150px;
+      }
+
+      .text_container {
+        margin-left: 40px;
+        display: flex;
+        .item_name {
+          width: 100%;
+          // display: flex;
+          // justify-content: space-between;
+          margin-top: 12px;
+
+          h4 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: $sub_color3;
+          }
+
+          .item_description {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            width: 196px;
+            margin-top: 4px;
+            color: rgba(96, 96, 96, 0.7);
+          }
+        }
+
+        .item_price_and_qty_container {
+          // display: flex;
+          // justify-content: space-between;
+          margin: 12px 0px 13px 0px;
+          width: 50%;
+
+          h4 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: $sub_color2;
+            .naira_sign {
+              font-weight: 300;
+              text-decoration-line: line-through;
+              text-decoration-style: double;
+              margin-right: 3px;
+            }
+          }
+
+          h6 {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 40px;
+            color: $sub_color2;
+            margin-top: 15px;
+
+            .quantity_btn {
+              padding: 0px;
+              font-size: 0px;
+              background-color: transparent;
+            }
+
+            .plus {
+              margin-right: 14px;
+            }
+            .minus {
+              margin-left: 14px;
+              position: relative;
+              bottom: 5px;
+            }
+          }
+        }
+
+        .sub_total {
+          width: 300px;
+          margin: 20px 0px 0px 50px;
+          h4 {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 10px;
+
+            color: $sub_color2;
+            .naira_sign {
+              font-weight: 300;
+              text-decoration-line: line-through;
+              text-decoration-style: double;
+              margin-right: 3px;
+            }
+          }
+
+          .delete_btn {
+            font-size: 15px;
+            font-weight: 500;
+            color: red;
+            padding: 0px;
+            margin-top: 25px;
+            font-family: Chivo;
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+
+    .total_order_cost {
+      width: 100%;
+      background-color: $primary_bg1;
+      padding: 15px;
+      box-shadow: 1px 1px 5px $sub_color3;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      border-radius: 5px;
+
+      h4 {
+        font-size: 18px;
+        color: $sub_color2;
+        font-weight: 700;
+        font-family: Chivo;
+        .figures {
+          font-size: 25px;
+          color: #ec5c34;
+
+          .naira_sign {
+            font-weight: 300;
+            text-decoration-line: line-through;
+            text-decoration-style: double;
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+
+    .place_order_btn {
+      border: 1px solid #ec5c34;
+      border-radius: 8px;
+      height: 40px;
+      width: 100%;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      background-color: transparent;
+      cursor: pointer;
+      color: #ec5c34;
+      transition: all 0.3s ease-in-out;
+      .plus_svg2 {
+        stroke: #ec5c34;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        background-color: #ec5c34;
+        color: #ffffff;
+        transition: all 0.3s ease-in-out;
+        .plus_svg2 {
+          stroke: white !important;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}

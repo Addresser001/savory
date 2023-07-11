@@ -1,10 +1,11 @@
 import './styles.scss';
-import { Sharwama_items, Sharwama_packs_menu_items } from '../data';
+import { Sharwama_items } from '../data';
 import { star, plus_svg, minus_svg, plus_svg2 } from '../../../assets/svg/svg';
-import { useEffect, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../../components/button/button';
-import GeneralContext from '../../../context/generalContext/GeneralContext';
+
 import { motion } from 'framer-motion';
+import UseGeneralContext from '../../../hooks/useGeneralContext';
 
 const containerVariants = {
   hidden: {
@@ -22,20 +23,10 @@ const containerVariants = {
     },
   },
 };
-const Sharwama = () => {
-  const { menuItemsSearchQuery } = useContext(GeneralContext);
-  const filtered_sharwama_items = Sharwama_items.filter((item) => {
-    if (menuItemsSearchQuery === '') {
-      return item;
-    } else if (
-      item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
-    ) {
-      return item;
-    }
-  });
-
-  const filtered_sharwama_packs_item = Sharwama_packs_menu_items.filter(
-    (item) => {
+const Sharwama = ({ addItemToSummary }) => {
+  const { menuItemsSearchQuery } = UseGeneralContext();
+  const [filteredSharwamaItems, setFilteredSharwamaItems] = useState(
+    Sharwama_items.filter((item) => {
       if (menuItemsSearchQuery === '') {
         return item;
       } else if (
@@ -43,8 +34,29 @@ const Sharwama = () => {
       ) {
         return item;
       }
-    }
+    })
   );
+
+  const handlePlusQuantity = (id) => {
+    filteredSharwamaItems.forEach((item) => {
+      if (item.id === id) {
+        item.quantity++;
+      }
+      setFilteredSharwamaItems([...filteredSharwamaItems]);
+    });
+  };
+
+  const handleMinorsQuantity = (id) => {
+    filteredSharwamaItems.forEach((item) => {
+      if (item.id === id && item.quantity === 1) {
+        item.quantity = 1;
+      } else if (item.id === id && item.quantity > 1) {
+        item.quantity--;
+      }
+      setFilteredSharwamaItems([...filteredSharwamaItems]);
+    });
+  };
+
   return (
     <motion.div
       className='wrapper'
@@ -55,8 +67,8 @@ const Sharwama = () => {
       <h2 className='header'>Sharwama</h2>
 
       <div className='items_container'>
-        {filtered_sharwama_items.map((item) => {
-          const { id, img, name, category, price, quantity } = item;
+        {filteredSharwamaItems.slice(0, 6).map((item) => {
+          let { id, img, name, category, price, quantity } = item;
 
           return (
             <div className='each_item' key={id}>
@@ -66,15 +78,31 @@ const Sharwama = () => {
                 <h6 className='star'>4{star}</h6>
               </div>
               <div className='item_price_and_qty_container'>
-                <h4>{price}</h4>
+                <h4>
+                  <span className='naira_sign'>N</span>
+                  {price?.toLocaleString('en-US')}
+                </h4>
                 <h6 className='item_quantity'>
-                  <Button text={plus_svg} className='quantity_btn plus' />
+                  <Button
+                    text={plus_svg}
+                    className='quantity_btn plus'
+                    onClick={() => handlePlusQuantity(id)}
+                  />
                   {quantity}
 
-                  <Button text={minus_svg} className='quantity_btn  minus' />
+                  <Button
+                    text={minus_svg}
+                    className='quantity_btn  minus'
+                    onClick={() => handleMinorsQuantity(id)}
+                  />
                 </h6>
               </div>
-              <button className='add_btn'>ADD {plus_svg2}</button>
+              <button
+                className='add_btn'
+                onClick={() => addItemToSummary(item)}
+              >
+                ADD {plus_svg2}
+              </button>
             </div>
           );
         })}
@@ -83,7 +111,7 @@ const Sharwama = () => {
       <h2 className='header packs_header'>Packs</h2>
 
       <div className='items_container'>
-        {filtered_sharwama_packs_item.map((item) => {
+        {filteredSharwamaItems.slice(6).map((item) => {
           const { id, img, name, category, desc, price, quantity } = item;
           return (
             <div className='each_item' key={id}>
@@ -94,15 +122,31 @@ const Sharwama = () => {
               </div>
               <h6 className='item_description'>{desc}</h6>
               <div className='item_price_and_qty_container'>
-                <h4>{price}</h4>
+                <h4>
+                  <span className='naira_sign'>N</span>
+                  {price?.toLocaleString('en-US')}
+                </h4>
                 <h6 className='item_quantity'>
-                  <Button text={plus_svg} className='quantity_btn plus' />
+                  <Button
+                    text={plus_svg}
+                    className='quantity_btn plus'
+                    onClick={() => handlePlusQuantity(id)}
+                  />
                   {quantity}
 
-                  <Button text={minus_svg} className='quantity_btn  minus' />
+                  <Button
+                    text={minus_svg}
+                    className='quantity_btn  minus'
+                    onClick={() => handleMinorsQuantity(id)}
+                  />
                 </h6>
               </div>
-              <button className='add_btn'>ADD {plus_svg2}</button>
+              <button
+                className='add_btn'
+                onClick={() => addItemToSummary(item)}
+              >
+                ADD {plus_svg2}
+              </button>
             </div>
           );
         })}

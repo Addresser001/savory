@@ -12,6 +12,7 @@ export const NavItems = [
   {
     link: '/order',
     caption: 'Order',
+    numberOfOrder: 0,
   },
 
   {

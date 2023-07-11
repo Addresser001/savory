@@ -2,20 +2,33 @@ import './styles.scss';
 
 import Sharwama from './menu_categories/sharwama';
 import { Search_icon } from '../../assets/svg/svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Grills from './menu_categories/grills';
 import Bugers from './menu_categories/buger';
-import { useContext } from 'react';
-import GeneralContext from '../../context/generalContext/GeneralContext';
+import UseGeneralContext from '../../hooks/useGeneralContext';
 import { motion } from 'framer-motion';
 import SideNav from './sideNav/sideNav';
 
 const MenuPage = () => {
-  const { setMenuItemsSearchQuery } = useContext(GeneralContext);
+  const { setMenuItemsSearchQuery, orderSummary, setOrderSummary } =
+    UseGeneralContext();
 
   const [activeNav, setActiveNav] = useState(0);
 
-  const tabComponents = [<Sharwama />, <Grills />, <Bugers />];
+  const addItemToSummary = (item) => {
+    setOrderSummary([...orderSummary, item]);
+    const filter = orderSummary.filter((order) => order.id !== item.id);
+    console.log(orderSummary);
+    setOrderSummary([item, ...filter]);
+    let userOrder = [item, ...filter];
+    return localStorage.setItem('summary', JSON.stringify(userOrder));
+  };
+
+  const tabComponents = [
+    <Sharwama addItemToSummary={addItemToSummary} />,
+    <Grills addItemToSummary={addItemToSummary} />,
+    <Bugers addItemToSummary={addItemToSummary} />,
+  ];
   return (
     <div className='menu_container'>
       <SideNav activeNav={activeNav} setActiveNav={setActiveNav} />

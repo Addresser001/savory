@@ -1042,11 +1042,12 @@ export const plus_svg2 = (
     height='14'
     viewBox='0 0 14 14'
     fill='none'
+    className='plus_svg2'
     xmlns='http://www.w3.org/2000/svg'
   >
     <path
       d='M7 13V7M7 7V1M7 7H13M7 7H1'
-      stroke='#EC5C34'
+      // stroke='#EC5C34'
       stroke-width='2'
       stroke-linecap='round'
     />

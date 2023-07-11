@@ -85,6 +85,12 @@
           font-size: 18px;
           line-height: 22px;
           color: $sub_color2;
+          .naira_sign {
+            font-weight: 300;
+            text-decoration-line: line-through;
+            text-decoration-style: double;
+            margin-right: 3px;
+          }
         }
 
         h6 {
@@ -121,7 +127,22 @@
         font-size: 18px;
         line-height: 22px;
         background-color: transparent;
+        cursor: pointer;
         color: #ec5c34;
+        transition: all 0.3s ease-in-out;
+        .plus_svg2 {
+          stroke: #ec5c34;
+          transition: all 0.3s ease-in-out;
+        }
+        &:hover {
+          background-color: #ec5c34;
+          color: #ffffff;
+          transition: all 0.3s ease-in-out;
+          .plus_svg2 {
+            stroke: white !important;
+            transition: all 0.3s ease-in-out;
+          }
+        }
       }
     }
   }

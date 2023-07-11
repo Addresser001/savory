@@ -34,6 +34,17 @@
           color: $text_white;
           padding: 20px;
           font-weight: 400;
+
+          .number_of_ordered_items {
+            background-color: white;
+            color: $special_color;
+            padding: 2px 7px;
+            border-radius: 50%;
+            font-size: 14px;
+            margin-left: 2px;
+            // position: relative;
+            // bottom: 6px;
+          }
         }
 
         .active {

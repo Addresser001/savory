@@ -5,6 +5,7 @@ import ToggleBtn from './toggleButtons';
 import { useEffect, useState } from 'react';
 import { NavItems } from './navItems';
 import { NavLink as Link } from 'react-router-dom';
+import UseGeneralContext from '../../hooks/useGeneralContext';
 
 const sidebarVariants = {
   open: {
@@ -74,13 +75,15 @@ const TopNavigation = () => {
   //     fontWeight: isActive ? '600' : '400',
   //   };
   // };
+
+  const { orderSummary } = UseGeneralContext();
   return (
     <motion.div className='top_navigation'>
       <motion.nav className='desktop_view'>
         <div className='logo'>{Logo}</div>
         <ul>
           {NavItems.map((items) => {
-            const { link, caption } = items;
+            const { link, caption, numberOfOrder } = items;
 
             return (
               <li>
@@ -92,6 +95,11 @@ const TopNavigation = () => {
                   }
                 >
                   {caption}
+                  {caption === 'Order' && (
+                    <span className='number_of_ordered_items'>
+                      {orderSummary.length}
+                    </span>
+                  )}
                 </Link>
               </li>
             );

@@ -1,10 +1,10 @@
 import './styles.scss';
-import { Grills_items, Grills_side_items } from '../data';
+import { Grills_items } from '../data';
 import { star, plus_svg, minus_svg, plus_svg2 } from '../../../assets/svg/svg';
 import Button from '../../../components/button/button';
-import GeneralContext from '../../../context/generalContext/GeneralContext';
-import { useContext } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import UseGeneralContext from '../../../hooks/useGeneralContext';
 
 const containerVariants = {
   hidden: {
@@ -23,27 +23,39 @@ const containerVariants = {
   },
 };
 
-const Grills = () => {
-  const { menuItemsSearchQuery } = useContext(GeneralContext);
-  const filtered_grills_item = Grills_items.filter((item) => {
-    if (menuItemsSearchQuery === '') {
-      return item;
-    } else if (
-      item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
-    ) {
-      return item;
-    }
-  });
+const Grills = ({ addItemToSummary }) => {
+  const { menuItemsSearchQuery } = UseGeneralContext();
+  const [filteredGrillItems, setFilteredGrillItems] = useState(
+    Grills_items.filter((item) => {
+      if (menuItemsSearchQuery === '') {
+        return item;
+      } else if (
+        item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
+      ) {
+        return item;
+      }
+    })
+  );
 
-  const filtered_grills_side_item = Grills_side_items.filter((item) => {
-    if (menuItemsSearchQuery === '') {
-      return item;
-    } else if (
-      item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
-    ) {
-      return item;
-    }
-  });
+  const handlePlusQuantity = (id) => {
+    filteredGrillItems.forEach((item) => {
+      if (item.id === id) {
+        item.quantity++;
+      }
+      setFilteredGrillItems([...filteredGrillItems]);
+    });
+  };
+
+  const handleMinorsQuantity = (id) => {
+    filteredGrillItems.forEach((item) => {
+      if (item.id === id && item.quantity === 1) {
+        item.quantity = 1;
+      } else if (item.id === id && item.quantity > 1) {
+        item.quantity--;
+      }
+      setFilteredGrillItems([...filteredGrillItems]);
+    });
+  };
   return (
     <motion.div
       className='wrapper'
@@ -54,7 +66,7 @@ const Grills = () => {
       <h2 className='header'>Grills</h2>
 
       <div className='items_container'>
-        {filtered_grills_item.map((item) => {
+        {filteredGrillItems.slice(0, 6).map((item) => {
           const { id, img, name, category, price, quantity } = item;
           return (
             <div className='each_item' key={id}>
@@ -64,15 +76,31 @@ const Grills = () => {
                 <h6 className='star'>4{star}</h6>
               </div>
               <div className='item_price_and_qty_container'>
-                <h4>{price}</h4>
+                <h4>
+                  <span className='naira_sign'>N</span>
+                  {price?.toLocaleString('en-US')}
+                </h4>
                 <h6 className='item_quantity'>
-                  <Button text={plus_svg} className='quantity_btn plus' />
+                  <Button
+                    text={plus_svg}
+                    className='quantity_btn plus'
+                    onClick={() => handlePlusQuantity(id)}
+                  />
                   {quantity}
 
-                  <Button text={minus_svg} className='quantity_btn  minus' />
+                  <Button
+                    text={minus_svg}
+                    className='quantity_btn  minus'
+                    onClick={() => handleMinorsQuantity(id)}
+                  />
                 </h6>
               </div>
-              <button className='add_btn'>ADD {plus_svg2}</button>
+              <button
+                className='add_btn'
+                onClick={() => addItemToSummary(item)}
+              >
+                ADD {plus_svg2}
+              </button>
             </div>
           );
         })}
@@ -81,7 +109,7 @@ const Grills = () => {
       <h2 className='header packs_header'>Sides</h2>
 
       <div className='items_container'>
-        {filtered_grills_side_item.map((item) => {
+        {filteredGrillItems.slice(6).map((item) => {
           const { id, img, name, category, desc, price, quantity } = item;
           return (
             <div className='each_item' key={id}>
@@ -92,7 +120,10 @@ const Grills = () => {
               </div>
               <h6 className='item_description'>{desc}</h6>
               <div className='item_price_and_qty_container'>
-                <h4>{price}</h4>
+                <h4>
+                  <span className='naira_sign'>N</span>
+                  {price?.toLocaleString('en-US')}
+                </h4>
                 <h6 className='item_quantity'>
                   <Button text={plus_svg} className='quantity_btn plus' />
                   {quantity}
@@ -100,7 +131,12 @@ const Grills = () => {
                   <Button text={minus_svg} className='quantity_btn  minus' />
                 </h6>
               </div>
-              <button className='add_btn'>ADD {plus_svg2}</button>
+              <button
+                className='add_btn'
+                onClick={() => addItemToSummary(item)}
+              >
+                ADD {plus_svg2}
+              </button>
             </div>
           );
         })}
