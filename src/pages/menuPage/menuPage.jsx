@@ -40,11 +40,11 @@ const MenuPage = () => {
       <div className='menu_container'>
         <SideNav activeNav={activeNav} setActiveNav={setActiveNav} />
         <div className='display_template'>
-          <Button
+          {/* <Button
             text='Previous Order'
             onClick={() => setShowPreviousOrder(true)}
             className='previous_order_btn'
-          />
+          /> */}
 
           <div className='search_container'>
             <input

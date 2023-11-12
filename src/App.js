@@ -24,7 +24,7 @@ function App() {
   return (
     <div className='App'>
       <TopNavigation />
-      <PreviousOrder />
+      {/* <PreviousOrder /> */}
       <Routes>
         <Route exact path={LANDING_PAGE} element={<LandingPage />} />
         <Route path={MENU_PAGE} element={<MenuPage />} />

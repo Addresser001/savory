@@ -75,7 +75,7 @@ const OrderPage = () => {
     );
 
     orderSummary.forEach((sum, idx) => {
-      const { id, img, name, category, desc, price, quantity } = sum;
+      const { name, price, quantity } = sum;
       const subTotal = price * quantity;
       messageText =
         `${messageText}${newLine}` +
