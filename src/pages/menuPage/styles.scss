@@ -11,6 +11,17 @@
     width: 60%;
     margin: auto;
 
+    .previous_order_btn {
+      font-size: 12px;
+      color: $special_color;
+      background-color: $primary_bg1;
+      padding: 2px 5px;
+      box-shadow: 0.5px 0.5px 5px rgb(216, 214, 214);
+      margin-bottom: 10px;
+      font-family: Chivo;
+    }
+
+    
     .search_container {
       width: 100%;
       box-sizing: border-box;

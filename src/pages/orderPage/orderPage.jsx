@@ -18,6 +18,10 @@ const containerVariants = {
     opacity: 1,
   },
 };
+let messageText = '';
+let newLine = '%0a';
+let textBold = '*';
+
 const OrderPage = () => {
   // const [totalCost, setTotalCost] = useState(0);
 
@@ -69,7 +73,22 @@ const OrderPage = () => {
         0
       )
     );
+
+    orderSummary.forEach((sum, idx) => {
+      const { id, img, name, category, desc, price, quantity } = sum;
+      const subTotal = price * quantity;
+      messageText =
+        `${messageText}${newLine}` +
+        `Order ${
+          idx + 1
+        }${newLine}Name: ${textBold}${name}${textBold}${newLine}Quantity: ${textBold}${quantity}${textBold}${newLine}${newLine}`;
+    });
+    if (messageText.length > 1) {
+      messageText = messageText + '_Pls write your location:_ ';
+    }
   }, [orderSummary]);
+
+  const whatsappUrl = `https://web.whatsapp.com/send?phone=+2349053046284&text=${messageText}&app_absent=0`;
 
   return (
     <div className='order_page'>
@@ -105,17 +124,15 @@ const OrderPage = () => {
                       </h4>
                       <h6 className='item_quantity'>
                         <Button
-                          text={plus_svg}
-                          key='plus'
-                          className='quantity_btn plus'
-                          onClick={() => handlePlusQuantity(id)}
-                        />
-                        {quantity}
-
-                        <Button
                           text={minus_svg}
                           className='quantity_btn  minus'
                           onClick={() => handleMinorsQuantity(id)}
+                        />
+                        {quantity}
+                        <Button
+                          text={plus_svg}
+                          className='quantity_btn plus'
+                          onClick={() => handlePlusQuantity(id)}
                         />
                       </h6>
                     </div>
@@ -144,14 +161,23 @@ const OrderPage = () => {
                   {totalOrderCost?.toLocaleString('en-US')}
                 </span>
               </h4>
+
+              <p className='note'>
+                NOTE:{' '}
+                <span>
+                  Delivery cost is not included in the Total Order Cost!
+                </span>
+              </p>
             </div>
-            <Button text='PLACE ORDER' className='place_order_btn' />
+            <a href={whatsappUrl} target='_blank'>
+              <Button text='PLACE ORDER' className='place_order_btn' />
+            </a>
           </motion.div>
         </>
       ) : (
-        <div className='summary_empty'>
-          <h1>Summary Empty</h1>
-        </div>
+        <motion.div layout className='summary_empty'>
+          <h1>YOU HAVE NO ORDER AVAILABLE</h1>
+        </motion.div>
       )}
     </div>
   );

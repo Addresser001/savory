@@ -6,8 +6,10 @@ import { useEffect } from 'react';
 
 import './App.css';
 import MenuPage from './pages/menuPage/menuPage';
+// import 'antd/dist/reset.css';
 import OrderPage from './pages/orderPage/orderPage';
 import UseGeneralContext from './hooks/useGeneralContext';
+import PreviousOrder from './pages/orderPage/previousOrder/previousOrder';
 function App() {
   const { setOrderSummary, monitorOrderQuantityChanges } = UseGeneralContext();
 
@@ -22,7 +24,7 @@ function App() {
   return (
     <div className='App'>
       <TopNavigation />
-
+      <PreviousOrder />
       <Routes>
         <Route exact path={LANDING_PAGE} element={<LandingPage />} />
         <Route path={MENU_PAGE} element={<MenuPage />} />

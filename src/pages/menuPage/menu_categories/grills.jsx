@@ -2,7 +2,7 @@ import './styles.scss';
 import { Grills_items } from '../data';
 import { star, plus_svg, minus_svg, plus_svg2 } from '../../../assets/svg/svg';
 import Button from '../../../components/button/button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import UseGeneralContext from '../../../hooks/useGeneralContext';
 
@@ -25,17 +25,21 @@ const containerVariants = {
 
 const Grills = ({ addItemToSummary }) => {
   const { menuItemsSearchQuery } = UseGeneralContext();
-  const [filteredGrillItems, setFilteredGrillItems] = useState(
-    Grills_items.filter((item) => {
-      if (menuItemsSearchQuery === '') {
-        return item;
-      } else if (
-        item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
-      ) {
-        return item;
-      }
-    })
-  );
+  const [filteredGrillItems, setFilteredGrillItems] = useState([]);
+
+  useEffect(() => {
+    setFilteredGrillItems(
+      Grills_items.filter((item) => {
+        if (menuItemsSearchQuery === '') {
+          return item;
+        } else if (
+          item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
+        ) {
+          return item;
+        }
+      })
+    );
+  }, [menuItemsSearchQuery]);
 
   const handlePlusQuantity = (id) => {
     filteredGrillItems.forEach((item) => {
@@ -82,16 +86,15 @@ const Grills = ({ addItemToSummary }) => {
                 </h4>
                 <h6 className='item_quantity'>
                   <Button
-                    text={plus_svg}
-                    className='quantity_btn plus'
-                    onClick={() => handlePlusQuantity(id)}
-                  />
-                  {quantity}
-
-                  <Button
                     text={minus_svg}
                     className='quantity_btn  minus'
                     onClick={() => handleMinorsQuantity(id)}
+                  />
+                  {quantity}
+                  <Button
+                    text={plus_svg}
+                    className='quantity_btn plus'
+                    onClick={() => handlePlusQuantity(id)}
                   />
                 </h6>
               </div>

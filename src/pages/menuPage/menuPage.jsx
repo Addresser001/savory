@@ -8,10 +8,15 @@ import Bugers from './menu_categories/buger';
 import UseGeneralContext from '../../hooks/useGeneralContext';
 import { motion } from 'framer-motion';
 import SideNav from './sideNav/sideNav';
+import Button from '../../components/button/button';
 
 const MenuPage = () => {
-  const { setMenuItemsSearchQuery, orderSummary, setOrderSummary } =
-    UseGeneralContext();
+  const {
+    setMenuItemsSearchQuery,
+    orderSummary,
+    setOrderSummary,
+    setShowPreviousOrder,
+  } = UseGeneralContext();
 
   const [activeNav, setActiveNav] = useState(0);
 
@@ -29,23 +34,33 @@ const MenuPage = () => {
     <Grills addItemToSummary={addItemToSummary} />,
     <Bugers addItemToSummary={addItemToSummary} />,
   ];
+
   return (
-    <div className='menu_container'>
-      <SideNav activeNav={activeNav} setActiveNav={setActiveNav} />
-      <div className='display_template'>
-        <div className='search_container'>
-          <input
-            id='searchBar'
-            type='text'
-            placeholder='Search items...'
-            autoFocus
-            onChange={(event) => setMenuItemsSearchQuery(event.target.value)}
+    <>
+      <div className='menu_container'>
+        <SideNav activeNav={activeNav} setActiveNav={setActiveNav} />
+        <div className='display_template'>
+          <Button
+            text='Previous Order'
+            onClick={() => setShowPreviousOrder(true)}
+            className='previous_order_btn'
           />
-          <span>{Search_icon}</span>
+
+          <div className='search_container'>
+            <input
+              id='searchBar'
+              type='text'
+              placeholder='Search items...'
+              autoFocus
+              onChange={(event) => setMenuItemsSearchQuery(event.target.value)}
+            />
+            <span>{Search_icon}</span>
+          </div>
+
+          {tabComponents[activeNav]}
         </div>
-        {tabComponents[activeNav]}
       </div>
-    </div>
+    </>
   );
 };
 

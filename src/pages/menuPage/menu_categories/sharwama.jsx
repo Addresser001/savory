@@ -25,17 +25,21 @@ const containerVariants = {
 };
 const Sharwama = ({ addItemToSummary }) => {
   const { menuItemsSearchQuery } = UseGeneralContext();
-  const [filteredSharwamaItems, setFilteredSharwamaItems] = useState(
-    Sharwama_items.filter((item) => {
-      if (menuItemsSearchQuery === '') {
-        return item;
-      } else if (
-        item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
-      ) {
-        return item;
-      }
-    })
-  );
+  const [filteredSharwamaItems, setFilteredSharwamaItems] = useState([]);
+
+  useEffect(() => {
+    setFilteredSharwamaItems(
+      Sharwama_items.filter((item) => {
+        if (menuItemsSearchQuery === '') {
+          return item;
+        } else if (
+          item.name.toLowerCase().includes(menuItemsSearchQuery.toLowerCase())
+        ) {
+          return item;
+        }
+      })
+    );
+  }, [menuItemsSearchQuery]);
 
   const handlePlusQuantity = (id) => {
     filteredSharwamaItems.forEach((item) => {
@@ -84,16 +88,15 @@ const Sharwama = ({ addItemToSummary }) => {
                 </h4>
                 <h6 className='item_quantity'>
                   <Button
-                    text={plus_svg}
-                    className='quantity_btn plus'
-                    onClick={() => handlePlusQuantity(id)}
-                  />
-                  {quantity}
-
-                  <Button
                     text={minus_svg}
                     className='quantity_btn  minus'
                     onClick={() => handleMinorsQuantity(id)}
+                  />
+                  {quantity}
+                  <Button
+                    text={plus_svg}
+                    className='quantity_btn plus'
+                    onClick={() => handlePlusQuantity(id)}
                   />
                 </h6>
               </div>
@@ -128,16 +131,15 @@ const Sharwama = ({ addItemToSummary }) => {
                 </h4>
                 <h6 className='item_quantity'>
                   <Button
-                    text={plus_svg}
-                    className='quantity_btn plus'
-                    onClick={() => handlePlusQuantity(id)}
-                  />
-                  {quantity}
-
-                  <Button
                     text={minus_svg}
                     className='quantity_btn  minus'
                     onClick={() => handleMinorsQuantity(id)}
+                  />
+                  {quantity}
+                  <Button
+                    text={plus_svg}
+                    className='quantity_btn plus'
+                    onClick={() => handlePlusQuantity(id)}
                   />
                 </h6>
               </div>

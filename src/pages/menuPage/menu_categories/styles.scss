@@ -20,8 +20,8 @@
   .items_container {
     width: 100%;
     display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    grid-template-columns: 1fr 1fr 1fr;
 
     justify-content: space-between;
     grid-gap: 31px;
@@ -106,10 +106,10 @@
           }
 
           .plus {
-            margin-right: 14px;
+            margin-left: 14px;
           }
           .minus {
-            margin-left: 14px;
+            margin-right: 14px;
             position: relative;
             bottom: 5px;
           }

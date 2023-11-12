@@ -7,6 +7,8 @@ const GeneralState = (props) => {
   const [monitorOrderQuantityChanges, setMonitorOrderQuantityChanges] =
     useState(false);
 
+  const [showPreviousOrder, setShowPreviousOrder] = useState(true);
+
   return (
     <GeneralContext.Provider
       value={{
@@ -16,6 +18,8 @@ const GeneralState = (props) => {
         setOrderSummary,
         monitorOrderQuantityChanges,
         setMonitorOrderQuantityChanges,
+        showPreviousOrder,
+        setShowPreviousOrder,
       }}
     >
       {props.children}
